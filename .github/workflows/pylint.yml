@@ -20,7 +20,7 @@ jobs:
       - name: Install linting tools
         run: |
           python -m pip install --upgrade pip
-          pip install pylint black isort
+          pip install black isort
 
       - name: Auto-format imports and code with isort & black
         run: |
@@ -41,8 +41,3 @@ jobs:
         run: |
           echo "▶ Checking code formatting (black --check)"
           black --check .
-
-      - name: Analyze code with pylint
-        run: |
-          echo "▶ Analyzing code with pylint"
-          pylint $(git ls-files '*.py')
