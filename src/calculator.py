@@ -1,6 +1,10 @@
 from src.tokenizer import tokenize as tk
 
 def calculate(expr):
+    """
+    @param expr: 수식 문자열
+    @return: 계산 결과 또는 오류 메시지
+    """
     tokens = tk(expr)
     if not tokens:
         return "잘못된 수식입니다."
@@ -12,7 +16,7 @@ def calculate(expr):
     for token in tokens:
         if token.replace('.', '', 1).lstrip('-').isdigit():
             output.append(token)
-        elif token in '+-*/':
+        elif token in "+-*/":
             while ops and ops[-1] != '(' and precedence.get(ops[-1], 0) >= precedence[token]:
                 output.append(ops.pop())
             ops.append(token)
@@ -23,6 +27,7 @@ def calculate(expr):
                 output.append(ops.pop())
             if ops and ops[-1] == '(':
                 ops.pop()
+                # output.append('*')
             else:
                 return "괄호 오류"
         else:
