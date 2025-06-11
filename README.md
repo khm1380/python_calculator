@@ -28,6 +28,6 @@ python -m venv venv
 
 ### 프로젝트 실행
 ```shell
-python ./src/calculator/main.py
-python3 ./src/calculator/main.py
+python main.py
+python3 main.py
 ```
