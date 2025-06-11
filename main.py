@@ -5,12 +5,14 @@ def main():
     print("종료하려면 'exit' 입력")
 
     while True:
-        expr = input(">> ").replace(" ", "")
-        if expr.lower() == 'exit':
+        user_input = input(">> ").replace(" ", "") # 공백 제거
+
+        if user_input.lower() == 'exit':
             print("계산기를 종료합니다.")
             break
-        result = cal(expr)
-        print(f"결과: {result}")
+
+        res = cal(user_input)
+        print(f"결과: {res}")
 
 if __name__ == "__main__":
     main()
