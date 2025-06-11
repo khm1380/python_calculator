@@ -1,6 +1,5 @@
 from src.tokenizer import tokenize as tk
 
-
 def calculate(user_input: str) -> int | float | str:
     """
     @param user_input: 수식 문자열
