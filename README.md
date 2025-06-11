@@ -28,6 +28,5 @@ python -m venv venv
 
 ### 프로젝트 실행
 ```shell
-python main.py
 python3 main.py
 ```
